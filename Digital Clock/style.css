@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.clock {
+  font-size: 4rem;
+  letter-spacing: 2px;
+}
+
+.toggle-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #333;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.toggle-btn:hover {
+  background-color: #444;
+}
