@@ -12,11 +12,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
-} 
+}
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
 }
