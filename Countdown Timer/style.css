@@ -20,4 +20,21 @@ body {
   text-align: center;
 }
 
+.inputs input {
+    width: 60px;
+    padding: 10px;
+    font-size: 18px;
+    margin: 5px;
+    text-align: center;
+    border: none;
+    border-radius: 8px;
+}
+
+.display {
+    font-size: 48px;
+    margin: 20px 0;
+}
+
+
+
 
