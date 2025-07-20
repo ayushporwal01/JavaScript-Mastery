@@ -72,6 +72,9 @@ pauseBtn.addEventListener("click", () => {
 
     isPaused = false;
   }
+  else {
+    alert("Nothing to pause, set the timer first");
+  }
 });
 
 //Reset Countdown
