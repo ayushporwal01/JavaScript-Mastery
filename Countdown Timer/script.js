@@ -29,7 +29,7 @@ startBtn.addEventListener("click", () => {
 
   //alert if clicked any button before entering the hours, minutes, seconds
   if (remainingTime <= 0) {
-    alert("Please enter a time before starting the countdown.");
+    alert("Nothing to start — set the timer first.");
     return;
   }
 
