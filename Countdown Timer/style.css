@@ -18,6 +18,9 @@ body {
 
 .container {
   text-align: center;
+  padding: 3rem;
+  border: 1px solid #ddd;
+  border-radius: 10px;
 }
 
 .inputs input {
