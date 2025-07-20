@@ -51,7 +51,6 @@ startBtn.addEventListener("click", () => {
 
 //Pause Countdown
 pauseBtn.addEventListener("click", () => {
-  //do nothing if coundown is not running
   if (!countdown) {
     alert("Nothing to pause — start the timer first.");
     return;
