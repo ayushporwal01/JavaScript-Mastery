@@ -63,6 +63,11 @@ pauseBtn.addEventListener("click", () => {
 
 //Reset Countdown
 resetBtn.addEventListener("click", () => {
+  if (remainingTime <= 0) {
+    alert("Nothing to reset — please set and start the timer.");
+    return;
+  }
+
   clearInterval(countdown);
   countdown = null;
   isPaused = false;
