@@ -14,7 +14,7 @@ function updateDisplay(seconds) {
   timerDisplay.textContent = `${hrs}:${mins}:${secs}`; //updates timer in ui
 }
 
-//Start
+//Start Countdown
 startBtn.addEventListener("click", () => {
   // Prevents multiple countdowns or resuming while paused
   if (countdown || isPaused) return;
