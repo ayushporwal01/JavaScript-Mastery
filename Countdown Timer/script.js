@@ -17,7 +17,9 @@ function updateTime(seconds) {
 startBtn.addEventListener("click", () => {
   if (countdown || isPaused) return;
 
-  const hrs = parseInt(document.getElementById("hours").value) || 0; //gets input value, converts it to number, invalid value default to 0, prints it
+  //gets input value, converts it to number, invalid value default to 0, prints it
+  const hrs = parseInt(document.getElementById("hours").value) || 0;
   const mins = parseInt(document.getElementById("minutes").value) || 0;
   const secs = parseInt(document.getElementById("seconds").value) || 0;
+  
 });
