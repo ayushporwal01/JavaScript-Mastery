@@ -67,6 +67,8 @@ pauseBtn.addEventListener("click", () => {
       remainingTime--;
       updateDisplay(remainingTime);
     }, 1000);
+
+    isPaused = false;
   }
 });
 
