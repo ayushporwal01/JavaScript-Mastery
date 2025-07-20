@@ -56,7 +56,9 @@ pauseBtn.addEventListener("click", () => {
     clearInterval(countdown);
     countdown = null;
     isPaused = true;
-  } else if (isPaused) {
+  }
+  // If countdown is not running, but it's paused → Resume it
+  else if (isPaused) {
     countdown = setInterval(() => {
       if (remainingTime <= 0) {
         clearInterval(countdown);
