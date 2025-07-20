@@ -1,5 +1,5 @@
 let countdown;
-let isPausee = false;
+let isPaused = false;
 let remainingTime = 0;
 
 const timerDisplay = document.getElementById("timer");
@@ -14,3 +14,9 @@ function updateTime(seconds) {
  timerDisplay.textContent= `${hrs}:${mins}:${secs}`; //updates timer in ui
 }
 
+startBtn.addEventListener("click", () => {
+    if(countdown || isPaused) return; 
+    
+   const hrs = parseInt(document.getElementById("hours").value) || 0; //gets input value, converts it to number, invalid value default to 0, prints it
+   
+})
