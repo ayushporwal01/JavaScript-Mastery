@@ -29,7 +29,7 @@ startBtn.addEventListener("click", () => {
 
   //alert if clicked any button before entering the hours, minutes, seconds
   if (remainingTime <= 0) {
-    alert("Nothing to start — set the timer first.");
+    alert("Nothing to start — please set the timer first.");
     return;
   }
 
@@ -73,7 +73,7 @@ pauseBtn.addEventListener("click", () => {
     isPaused = false;
   }
   else {
-    alert("Nothing to pause, set the timer first");
+    alert("Nothing to pause, please start the timer");
   }
 });
 
