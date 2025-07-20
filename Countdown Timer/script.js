@@ -51,13 +51,23 @@ startBtn.addEventListener("click", () => {
 
 //Pause Countdown
 pauseBtn.addEventListener("click", () => {
-  if (!countdown) {
-    alert("Nothing to pause — start the timer first.");
-    return;
+  // If countdown is running → Pause it
+  if (countdown) {
+    clearInterval(countdown);
+    countdown = null;
+    isPaused = true;
+  } else if (isPaused) {
+    countdown = setInterval(() => {
+      if (remainingTime <= 0) {
+        clearInterval(countdown);
+        countdown = null;
+        return;
+      }
+
+      remainingTime--;
+      updateDisplay(remainingTime);
+    }, 1000);
   }
-  clearInterval(countdown);
-  countdown = null;
-  isPaused = true;
 });
 
 //Reset Countdown
