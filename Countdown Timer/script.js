@@ -71,8 +71,7 @@ pauseBtn.addEventListener("click", () => {
     }, 1000);
 
     isPaused = false;
-  }
-  else {
+  } else {
     alert("Nothing to pause, please start the timer");
   }
 });
