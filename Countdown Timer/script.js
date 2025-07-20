@@ -27,6 +27,12 @@ startBtn.addEventListener("click", () => {
   // Convert to total seconds
   remainingTime = hrs * 3600 + mins * 60 + secs;
 
+  //alert if clicked any button before entering the hours, minutes, seconds
+  if (remainingTime <= 0) {
+    alert("Please enter a time before starting the countdown.");
+    return;
+  }
+
   //If Time is Zero or Invalid, Stop
   if (remainingTime <= 0) return;
 
