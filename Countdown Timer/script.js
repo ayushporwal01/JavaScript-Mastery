@@ -4,8 +4,8 @@ let remainingTime = 0;
 
 const timerDisplay = document.getElementById("timer");
 const startBtn = document.getElementById("start");
-const pause = document.getElementById("pause");
-const reset = document.getElementById("reset");
+const pauseBtn = document.getElementById("pause");
+const resetBtn = document.getElementById("reset");
 
 function updateDisplay(seconds) {
   const hrs = String(Math.floor(seconds / 3600)).padStart(2, "0"); //get full hours
@@ -14,18 +14,23 @@ function updateDisplay(seconds) {
   timerDisplay.textContent = `${hrs}:${mins}:${secs}`; //updates timer in ui
 }
 
+//Start
 startBtn.addEventListener("click", () => {
+  // Prevents multiple countdowns or resuming while paused
   if (countdown || isPaused) return;
 
-  //gets input value, converts it to number, invalid value default to 0, prints it
+  //gets input value, converts it to number, default to 0 if invalid, prints it
   const hrs = parseInt(document.getElementById("hours").value) || 0;
   const mins = parseInt(document.getElementById("minutes").value) || 0;
   const secs = parseInt(document.getElementById("seconds").value) || 0;
 
+  // Convert to total seconds
   remainingTime = hrs * 3600 + mins * 60 + secs;
 
+  //If Time is Zero or Invalid, Stop
   if (remainingTime <= 0) return;
 
+  // Start countdown
   countdown = setInterval(() => {
     if (remainingTime <= 0) {
       clearInterval(countdown);
@@ -33,8 +38,28 @@ startBtn.addEventListener("click", () => {
       return;
     }
 
-    remainingTime--;
-    updateDisplay(remainingTime);
+    remainingTime--; //updates remainingTime every second
+    updateDisplay(remainingTime); //display the updated time on ui
   }, 1000);
 });
 
+//Pause Countdown
+pauseBtn.addEventListener("click", () => {
+  if (!countdown) return; //do nothing if coundown is not running
+
+  clearInterval(countdown);
+  countdown = null;
+  isPaused = true;
+});
+
+//Reset Countdown
+resetBtn.addEventListener("click", () => {
+  clearInterval(countdown);
+  countdown = null;
+  isPaused = false;
+  remainingTime = 0;
+  updateDisplay(0);
+  document.getElementById("hours").value = ``;
+  document.getElementById("minutes").value = ``;
+  document.getElementById("seconds").value = ``;
+});
