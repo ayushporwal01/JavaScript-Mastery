@@ -12,3 +12,22 @@ function updateDisplay(elapsed) {
   display.textContent = `${seconds}.${String(centiseconds).padStart(2, "0")}`;
 }
 
+startBtn.addEventListener("click", () => {
+  if (!running) {
+    // Start stopwatch
+    running = true;
+    startBtn.textContent = "Pause";
+    const start = Date.now() - startTime;
+
+    interval = setInterval(() => {
+      startTime = Date.now() - start;
+      updateDisplay(startTime);
+    }, 10);
+  } else {
+    // Pause stopwatch
+    running = false;
+    startBtn.textContent = "Start";
+    clearInterval(interval);
+  }
+});
+
