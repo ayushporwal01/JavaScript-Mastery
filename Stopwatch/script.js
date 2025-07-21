@@ -31,3 +31,10 @@ startBtn.addEventListener("click", () => {
   }
 });
 
+resetBtn.addEventListener("click", () => {
+  running = false;
+  clearInterval(interval);
+  startTime = 0;
+  updateDisplay(0);
+  startBtn.textContent = "Start";
+});
