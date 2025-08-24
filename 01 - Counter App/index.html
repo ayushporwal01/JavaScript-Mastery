@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App</title>
+    <link href="./src/output.css" rel="stylesheet">
+</head>
+<body class="h-screen flex justify-center items-center bg-[#2b2a2a]">
+    <div class="w-[350px] h-[300px] flex flex-col justify-center items-center border bg-white text-black border-black rounded-xl">
+        <h1 class="text-4xl font-semibold">Counter</h1>
+        <div class="flex flex-col justify-center items-center">
+           <input type="number" min="0" value="0" class="w-60 border border-black h-10 text-xl mt-6 pl-3"> 
+           <div class="mt-6 flex space-x-3">
+               <button class="decrementBtn w-14 h-10 bg-orange-500 text-3xl rounded-sm hover:cursor-pointer">-</button>
+               <button class="incrementBtn w-14 h-10 bg-orange-500 text-2xl rounded-sm hover:cursor-pointer">+</button>
+               <button class="resetBtn w-14 h-10 bg-orange-500 text-[1.1rem] rounded-sm hover:cursor-pointer">Reset</button>
+           </div>
+        </div> 
+    </div>
+
+    <script>
+        let incrementBtn = document.querySelector('.incrementBtn');
+        let decrementBtn = document.querySelector('.decrementBtn');
+        let resetBtn = document.querySelector('.resetBtn');
+        let input = document.querySelector('input');
+
+        function getValue() {
+          return parseInt(input.value) || 0;
+        }
+
+        input.addEventListener("input", () => {
+            let raw = input.value;
+
+            // Allow empty while typing
+            if (raw === "") return;
+
+            let val = parseInt(raw);
+
+            if (isNaN(val) || val < 0) {
+                input.value = 0;
+            } else {
+                input.value = val; // normalize (removes leading zeros etc.)
+            }
+        });
+
+        
+        incrementBtn.addEventListener("click", (e) => {
+            let val = getValue();
+            input.value = val + 1;
+        })
+        
+        decrementBtn.addEventListener("click", (e) => {
+            let val = getValue();
+            if(val > 0) {
+               input.value = val - 1;
+            }
+        })
+
+        resetBtn.addEventListener("click", (e) => {
+            input.value = 0;
+        })
+    </script>
+</body> 
+</html>
