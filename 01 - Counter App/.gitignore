@@ -1,3 +1,3 @@
-01 - Counter App/node_modules/
-01 - Counter App/.vscode/
-01 - Counter App/output.css
+./node_modules
+./.vscode
+./output.css
