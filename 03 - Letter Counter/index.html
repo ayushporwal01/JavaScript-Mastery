@@ -1,16 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Letter Counter</title>
-    <link rel="stylesheet" href="./output.css">
-</head>
-<body class="h-screen bg-black">
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+  <body class="h-screen bg-black flex justify-center items-center">
     <div>
-        <h1 class="text-4xl font-bold bg-gradient-to-r from-orange-500 via-yellow-300 bg-clip-text text-transparent">Letter Counter</h1>
-        <input type="text" placeholder="enter something here..." class="w-[300px] h-7 bg-white rounded-full pl-3">
+        <h1 class="text-4xl font-bold flex gap-2">
+        <span
+          class="bg-gradient-to-l from-orange-500 to-yellow-600 bg-clip-text text-transparent"
+          >Letter</span
+        >
+        <span
+          class="bg-gradient-to-l from-orange-500 to-yellow-600 bg-clip-text text-transparent"
+          >Counter</span
+        >
+        </h1>
+
+        <input
+        type="text"
+        placeholder="enter something here..."
+        class="w-[300px] h-7 bg-white rounded-full pl-3"
+        />
         <h3 class="text-white">Letter Count: <span id="count">0</span></h3>
     </div>
-</body>
+  </body>
 </html>
