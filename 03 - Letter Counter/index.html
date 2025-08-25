@@ -35,7 +35,9 @@
         textInput.addEventListener("input", () => {
             let text = textInput.value;
 
-
+            // count only letters (ignore numbers, spaces, symbols)
+            let letters = text.replace(/[^a-zA-Z]/g, ""); 
+            letterCount.textContent = letters.length;
         })
 
 
