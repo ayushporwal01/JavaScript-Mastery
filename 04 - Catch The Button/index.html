@@ -6,13 +6,13 @@
     <title>Catch The Button</title>
     <link rel="stylesheet" href="./output.css">
 </head>
-<body class="h-screen bg-cover bg-center flex justify-center items-center" style="background-image: url('./assets/bg.gif');">>
-    <div class="container w-[200px] h-[150px] bg-white border flex flex-col justify-center items-center">
+<body class="h-screen bg-cover bg-center flex justify-center items-center" style="background-image: url('./assets/bg.gif');">
+    <div class="container w-[200px] h-[150px] bg-white/20 backdrop-blur-md border border-white/10 shadow-lg flex flex-col justify-center items-center rounded-lg">
         <h2>Are you a gamer?</h2>
         
         <div class="flex space-x-5 mt-5">
-            <button id="yesBtn">Yes</button>
-            <button id="noBtn">No</button>
+            <button id="yesBtn" class="px-2.5 py-0.5 bg-white/70 rounded-xs cursor-pointer">Yes</button>
+            <button id="noBtn" class="px-2.5 py-0.5 bg-white/70 rounded-xs cursor-pointer">No</button>
         </div>
     </div>
 </body>
