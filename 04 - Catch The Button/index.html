@@ -11,20 +11,21 @@
         <h2>Are you a gamer?</h2>
         
         <div class="flex space-x-5 mt-5">
-            <button id="yesBtn" class="px-2.5 py-0.5 bg-white/70 rounded-xs cursor-pointer">Yes</button>
+            <button id="yesBtn" class="absolute px-2.5 py-0.5 bg-white/70 rounded-xs cursor-pointer">Yes</button>
             <button id="noBtn" class="px-2.5 py-0.5 bg-white/70 rounded-xs cursor-pointer">No</button>
         </div>
     </div>
 
     <script>
         let yesBtn = document.getElementById('yesBtn');
-        let container = document.querySelector('.container');
 
         yesBtn.addEventListener('mouseover', (e) => {
            const btnRect = yesBtn.getBoundingClientRect();
+           const bodyWidth = window.innerWidth;
+           const bodyHeight = window.innerHeight;
 
-           const maxX = container.clientWidth - btnRect.width;
-           const maxY = container.clientHeight - btnRect.height;
+           const maxX = bodyWidth - btnRect.width;
+           const maxY = bodyHeight - btnRect.height;
 
            const randomX = Math.floor(Math.random() * maxX); //Range: 0 to maxX - 1
            const randomY = Math.floor(Math.random() * maxY); //Range: 0 to maxY - 1
