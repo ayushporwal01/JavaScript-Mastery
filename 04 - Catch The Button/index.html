@@ -20,7 +20,19 @@
         let yesBtn = document.getElementById('yesBtn');
         let container = document.querySelector('.container');
 
-        
+        yesBtn.addEventListener('mouseover', (e) => {
+           const containerRect = container.getBoundingClientRect();
+           const btnRect = yesBtn.getBoundingClientRect();
+
+           const maxX = container.clientWidth - btnRect.width;
+           const maxY = container.clientHeight - btnRect.height;
+
+           const randomX = Math.floor(Math.random() * maxX); //Range: 0 to maxX - 1
+           const randomY = Math.floor(Math.random() * maxY); //Range: 0 to maxY - 1
+
+           yesBtn.style.left = `${randomX}px`;
+           yesBtn.style.top = `${randomY}px`;
+        });
     </script>
 </body>
 </html>
