@@ -17,10 +17,26 @@
     </div>
 
     <script>
-        let yesBtn = document.getElementById('yesBtn');
+        const yesBtn = document.getElementById('yesBtn');
+        const container = document.querySelector('.container');
 
-        yesBtn.addEventListener('mouseover', (e) => {
-       
+        yesBtn.addEventListener('mouseover', () => {
+            // Get container dimensions
+            const containerRect = container.getBoundingClientRect();
+            const btnRect = yesBtn.getBoundingClientRect();
+
+            // Calculate max position inside container
+            const maxX = containerRect.width - btnRect.width;
+            const maxY = containerRect.height - btnRect.height;
+
+            // Generate random position
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+
+            // Move the button
+            yesBtn.style.position = 'absolute';
+            yesBtn.style.left = randomX + 'px';
+            yesBtn.style.top = randomY + 'px';
         });
     </script>
 </body>
