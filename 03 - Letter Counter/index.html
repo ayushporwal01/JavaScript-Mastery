@@ -33,7 +33,7 @@
         let letterCount = document.querySelector('#letter-count');
 
         textInput.addEventListener("input", () => {
-            let text = textInput.value;
+            let text = textInput.value; 
 
             // count only letters (ignore numbers, spaces, symbols)
             let letters = text.replace(/[^a-zA-Z]/g, ""); //Regex
