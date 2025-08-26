@@ -18,20 +18,40 @@
 
     <script>
         let yesBtn = document.getElementById('yesBtn');
+        let attempts = 0;
 
         yesBtn.addEventListener('mouseover', (e) => {
-           const btnRect = yesBtn.getBoundingClientRect();
-           const bodyWidth = window.innerWidth;
-           const bodyHeight = window.innerHeight;
+            attempts++;
 
-           const maxX = bodyWidth - btnRect.width;
-           const maxY = bodyHeight - btnRect.height;
+            yesBtn.style.position = 'fixed';
+            yesBtn.style.zIndex = '1000';
 
-           const randomX = Math.floor(Math.random() * maxX); //Range: 0 to maxX - 1
-           const randomY = Math.floor(Math.random() * maxY); //Range: 0 to maxY - 1
+            const btnRect = yesBtn.getBoundingClientRect();
+            const bodyWidth = window.innerWidth;
+            const bodyHeight = window.innerHeight;
 
-           yesBtn.style.left = `${randomX}px`;
-           yesBtn.style.top = `${randomY}px`;
+            const maxX = bodyWidth - btnRect.width - 20; // Add some padding
+            const maxY = bodyHeight - btnRect.height - 20; // Add some padding
+
+            const randomX = Math.floor(Math.random() * maxX); //Range: 0 to maxX - 1
+            const randomY = Math.floor(Math.random() * maxY); //Range: 0 to maxY - 1
+
+            yesBtn.style.left = `${randomX}px`;
+            yesBtn.style.top = `${randomY}px`;
+
+            // Make it harder to catch after several attempts
+            if (attempts > 5) {
+                yesBtn.style.transition = 'all 0.3s ease-out';
+            }
+        });
+
+        // If they actually manage to click it
+        yesBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Wow! You actually caught it! You truly are a gamer! 🏆');
+            // Reset the button position
+            yesBtn.style.position = 'static';
+            yesBtn.style.transition = 'all 0.2s ease';
         });
     </script>
 </body>
